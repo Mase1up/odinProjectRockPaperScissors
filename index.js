@@ -64,3 +64,16 @@ function playGame(playerSelection, computerSelection) {
         }
     }
 }
+
+// Write a new function called game().  Use the previous function inside this one
+// to play a 5 round game and declare a winner at the end.
+// Can either use a loop if you already know them, or you can just call playGame()
+// 5 times inside this one.
+// You can modify the previous functions
+
+// 1. Add a roundsWon counter for player and/or computer
+// 2. Make a loop to run 5 games (while playerRoundsWon < 3 && computerRoundsWon < 3)
+// 3. console.log() the results of each round and the winner overall
+// 4. Use prompt() to get input from the user
+
+
