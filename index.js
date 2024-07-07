@@ -22,17 +22,22 @@ function getComputerChoice() {
 
 
 const computerChoice = getComputerChoice();
-// const playerChoice = "Paper";
-let playerChoice = prompt("Rock, Paper, or Scissors?");
 
-// I don't think you can write || statements like this, but I always want to
-// Guessing it will accept ANY input this way
-if (playerChoice.toUpperCase() === 'ROCK' || 'PAPER' || 'SCISSORS') {
-    console.log(playGame(playerChoice, computerChoice));
+// Want to establish variable as upper-case version of Rock, Paper, or Scissors, as typed by user
+// Now that I moved the prompt inside the function 
+let playerChoice = getPlayerChoice();
+
+function getPlayerChoice() {
+    let userInput = prompt("Rock, Paper, or Scissors?");
+    if (userInput.toUpperCase() === 'ROCK' || userInput.toUpperCase() === 'PAPER' || userInput.toUpperCase() === 'SCISSORS') {
+        console.log("Successful prompt input");
+        return userInput.toUpperCase();
+    } else {
+        getPlayerChoice();
+    }
 }
 
-
-
+console.log(playerChoice);
 
 // Write a function that player a round against the computer, accepting 2 arguments
 // playerSelection and computerSelection.  Returns a string declaring the winner.
