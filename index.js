@@ -11,10 +11,11 @@ let computerScoreStatement = `CPU Score: ${computerScore}`;
 let computerChoice
 let playerChoice
 
+let playerWon = false;
+let computerWon = false;
+
 function bestOfFiveGames() {
     for (let i = 0; playerScore < 3 && computerScore < 3; i++) {
-        let playerScoreTally
-        let computerScoreTally
         startGame();
 
     }
@@ -70,11 +71,14 @@ function playRound(playerSelection, computerSelection) {
             console.log(playerTies);
             printScore();
         } else if (computerSelection === "PAPER") {
+            computerScore++;
             console.log(playerLoses);
+            console.log(computerScore);
             printScore();
         } else {
             playerScore++;
             console.log(playerWins);
+            console.log(playerScore);
             printScore();
         }
     } else if (playerSelection === "PAPER") {
@@ -124,3 +128,10 @@ bestOfFiveGames();
 // 3. console.log() the results of each round and the winner overall
 // 4. Use prompt() to get input from the user
 
+
+
+/*
+As of right now, the game is recording playerScore && computerScore, it's running until
+one of the players reaches 3 wins, HOWEVER....
+it is NOT displaying the correct score in the playerScoreStatement nor computerScoreStatement
+*/
