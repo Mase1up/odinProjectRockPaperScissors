@@ -19,10 +19,19 @@ function getComputerChoice() {
 // console.log(getComputerChoice()); // Test it
 // console.log(playGame("paper", getComputerChoice())); // Test updated version
 
-const playerChoice = "Paper";
-const computerChoice = getComputerChoice();
 
-console.log(playGame(playerChoice, computerChoice));
+
+const computerChoice = getComputerChoice();
+// const playerChoice = "Paper";
+let playerChoice = prompt("Rock, Paper, or Scissors?");
+
+// I don't think you can write || statements like this, but I always want to
+// Guessing it will accept ANY input this way
+if (playerChoice.toUpperCase() === 'ROCK' || 'PAPER' || 'SCISSORS') {
+    console.log(playGame(playerChoice, computerChoice));
+}
+
+
 
 
 // Write a function that player a round against the computer, accepting 2 arguments
@@ -75,5 +84,4 @@ function playGame(playerSelection, computerSelection) {
 // 2. Make a loop to run 5 games (while playerRoundsWon < 3 && computerRoundsWon < 3)
 // 3. console.log() the results of each round and the winner overall
 // 4. Use prompt() to get input from the user
-
 
