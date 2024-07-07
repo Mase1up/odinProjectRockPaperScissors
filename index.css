@@ -4,3 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: center;
+}
+
+#start-game-btn {
+    margin-top: 25px;
+    padding: 10px;
+}
