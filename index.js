@@ -1,6 +1,6 @@
 // Don't know why, but start button is staying clicked when page loads, not when clicked
-// const startButtonEl = document.getElementById("start-game-btn");
-// startButtonEl.addEventListener("click", console.log("Start game clicked"));
+let startButtonEl = document.getElementById("start-game-btn");
+startButtonEl.addEventListener("click", bestOfFiveGames);
 
 let playerScore = 0;
 let computerScore = 0;
@@ -101,7 +101,7 @@ function printScores() {
     console.log(computerScoreStatement);
 }
 
-bestOfFiveGames();
+// bestOfFiveGames();
 
 // Write a new function called game().  Use the previous function inside this one
 // to play a 5 round game and declare a winner at the end.
