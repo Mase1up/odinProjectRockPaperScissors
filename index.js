@@ -5,20 +5,15 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let playerScoreStatement = `Player Score: ${playerScore}`;
-let computerScoreStatement = `CPU Score: ${computerScore}`;
-
 let computerChoice
 let playerChoice
-
-let playerWon = false;
-let computerWon = false;
 
 function bestOfFiveGames() {
     for (let i = 0; playerScore < 3 && computerScore < 3; i++) {
         startGame();
-
+        printScores();
     }
+
 }
 
 function startGame() {
@@ -69,48 +64,39 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "ROCK") {
         if (computerSelection === "ROCK") {
             console.log(playerTies);
-            printScore();
         } else if (computerSelection === "PAPER") {
             computerScore++;
             console.log(playerLoses);
-            console.log(computerScore);
-            printScore();
         } else {
             playerScore++;
             console.log(playerWins);
-            console.log(playerScore);
-            printScore();
         }
     } else if (playerSelection === "PAPER") {
         if (computerSelection === "ROCK") {
             playerScore++;
             console.log(playerWins);
-            printScore();
         } else if (computerSelection === "PAPER") {
             console.log(playerTies);
-            printScore();
         } else {
             computerScore++;
             console.log(playerLoses);
-            printScore();
         }
     } else {
         if (computerSelection === "ROCK") {
             computerScore++;
             console.log(playerLoses);
-            printScore();
-        } if (computerSelection === "PAPER") {
+        } else if (computerSelection === "PAPER") {
             playerScore++;
             console.log(playerWins);
-            printScore();
         } else {
             console.log(playerTies);
-            printScore();
         }
     }
 }
 
-function printScore() {
+function printScores() {
+    let playerScoreStatement = `Player Score: ${playerScore}`;
+    let computerScoreStatement = `CPU Score: ${computerScore}`;
     console.log(playerScoreStatement);
     console.log(computerScoreStatement);
 }
